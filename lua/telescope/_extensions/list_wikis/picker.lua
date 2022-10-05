@@ -17,7 +17,7 @@ M.wikis = function(opts)
         return
     end
 
-    print(vim.inspect(wiki_tbl))
+    -- print(vim.inspect(wiki_tbl))
     local wiki_formatted = {}
 
     for k, v in pairs(wiki_tbl) do
@@ -26,7 +26,7 @@ M.wikis = function(opts)
         table.insert(wiki_formatted, current_wiki)
     end
 
-    print(vim.inspect(wiki_formatted))
+    -- print(vim.inspect(wiki_formatted))
     pickers
         .new(opts, {
             prompt_title = "My-Wikis",
@@ -45,7 +45,7 @@ M.wikis = function(opts)
 
                     local wiki_name = wiki_formatted[selection.index]
 
-                    local command = ":e " .. wiki_name .. ")"
+                    local command = ":e " .. wiki_name .. ""
                     vim.api.nvim_exec(command, false)
                 end
 
